@@ -7,18 +7,41 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Hi, Rai! 💕</h1>
-        <p>Welcome to our little special place on the internet. 😊</p>
-        <button onclick="showMessage()">Click for a Surprise 💌</button>
-        <p id="secretMessage" class="hidden">You're the best thing that ever happened to me! 🥰</p>
-        
-        <div class="countdown">
-            <h2>Next Meet-Up Countdown ⏳</h2>
-            <p id="timer"></p>
+
+    <div class="love-container">
+        <h1>For My Love 💕</h1>
+
+        <div class="love-message-box">
+            <p id="loveMessage">
+                Everyday I wait for your message... when it comes finally, my friends say I become more energetic and fun. 
+                The days I talk to you feel like those few minutes were the highlight of my day.  
+                I know you are really busy, but I hope you can take out some time every day for just us.  
+                <br><br>
+                I don't know how you'll react to this, but I really have two goals in my life... get a decent job and live with you.  
+                I am stretching myself every day, pushing myself so I can be with you. Nothing else can be a better prize for me.  
+                <br><br>
+                I know we have been on only five dates... but they were enough to make myself think and imagine us together.  
+                Bbg, God has given me everything that I have asked Him for and truly deserved.  
+                Now I just want to win you over.  
+                <br><br>
+                Trust me, the distance is just a test of how tough days can be in the future, all I need you to do is believe in me.  
+                I'll fix everything. ❤️  
+            </p>
         </div>
+
+        <button class="love-button" onclick="showLoveGif()">I Believe in You ❤️</button>
+        
+        <div id="gifContainer" class="hidden">
+            <img src="https://media.giphy.com/media/j0kQBwprAOKfy/giphy.gif" alt="Love GIF">
+        </div>
+
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function showLoveGif() {
+            document.getElementById("gifContainer").classList.remove("hidden");
+        }
+    </script>
+
 </body>
 </html>
