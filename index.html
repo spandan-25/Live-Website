@@ -29,17 +29,42 @@
             </p>
         </div>
 
-        <button class="love-button" onclick="showLoveGif()">I Believe in You ❤️</button>
-        
-        <div id="gifContainer" class="hidden">
-            <img src="https://media.giphy.com/media/j0kQBwprAOKfy/giphy.gif" alt="Love GIF">
+        <button class="love-button" onclick="startSlideshow()">I Believe in You ❤️</button>
+
+        <!-- Slideshow Container -->
+        <div class="slideshow-container hidden" id="slideshow">
+            <div class="slide fade">
+                <img src="images/her1.jpg" alt="Her Picture 1">
+            </div>
+            <div class="slide fade">
+                <img src="images/her2.jpg" alt="Her Picture 2">
+            </div>
+            <div class="slide fade">
+                <img src="images/her3.jpg" alt="Her Picture 3">
+            </div>
+            <div class="slide fade">
+                <img src="images/her4.jpg" alt="Her Picture 4">
+            </div>
         </div>
 
     </div>
 
     <script>
-        function showLoveGif() {
-            document.getElementById("gifContainer").classList.remove("hidden");
+        let slideIndex = 0;
+        function startSlideshow() {
+            document.getElementById("slideshow").classList.remove("hidden");
+            showSlides();
+        }
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 2000); // Change image every 2 seconds
         }
     </script>
 
