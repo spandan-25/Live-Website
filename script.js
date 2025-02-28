@@ -1,10 +1,5 @@
-// Surprise Message Function
-function showMessage() {
-    document.getElementById("secretMessage").classList.remove("hidden");
-}
-
-// Countdown Timer (Set your date)
-const targetDate = new Date("2025-04-01T00:00:00").getTime();
+// Set the target date to March 15, 2025
+const targetDate = new Date("2025-03-15T00:00:00").getTime();
 
 function updateCountdown() {
     const now = new Date().getTime();
@@ -19,9 +14,12 @@ function updateCountdown() {
         document.getElementById("timer").innerHTML = 
             `${days} Days ${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
     } else {
-        document.getElementById("timer").innerHTML = "We're finally together! 🎉";
+        document.getElementById("timer").innerHTML = "We're finally together! 🎉💕";
     }
 }
 
 // Update countdown every second
 setInterval(updateCountdown, 1000);
+
+// Run function immediately to avoid 1s delay
+updateCountdown();
