@@ -49,6 +49,15 @@
 
     </div>
 
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="music/I-Wanna-Be-Yours-Slowed-Reverb.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Play Music Button -->
+    <button class="music-button" onclick="playMusic()">Play Music 🎶</button>
+
     <script>
         let slideIndex = 0;
         function startSlideshow() {
@@ -65,6 +74,15 @@
             if (slideIndex > slides.length) { slideIndex = 1 }
             slides[slideIndex - 1].style.display = "block";
             setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+
+        function playMusic() {
+            let audio = document.getElementById("bg-music");
+            if (audio.paused) {
+                audio.play();
+            } else {
+                audio.pause();
+            }
         }
     </script>
 
